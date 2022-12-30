@@ -1,0 +1,7 @@
+local oldNC
+oldNC = hookmetamethod(game, "__namecall", function(Self, ...)
+local Arguments = {...}
+local Method = getnamecallmethod()
+if Method == "FireServer" and Self.Name == "meleeHit" then
+Arguments[2]["meleeType"] = "superpunch"
+end
